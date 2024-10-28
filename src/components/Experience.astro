@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Agosto - Presente",
+    title: "Frontend Developer",
+    company: "Freelance",
+    description:
+      "Desarrollé el sitio web de una empresa dedicada a la arquitectura y diseño de interiores utilizando React.js, Tailwind CSS y TypeScript.",
+    link: "https://www.atemporalarq.com",
+  },
+  {
+    date: "Marzo 2023 - Julio 2024",
+    title: "Desarrollador",
+    company: "Mobup Tacna S.A.C.",
+    description:
+      "Desarrollé la página web de monitoreo utilizando HTML, Tailwind CSS, JavaScript,  y PHP, asegurando su responsividad para diferentes dispositivos. Actualicé, manipulé y extraje información de la base de datos utilizando SQL. Diseñé dashboards interactivos en Power BI que facilitaron la visualización y análisis del estado del servicio, mejorando la toma de decisiones. Además, desarrollé scripts en Linux para automatizar procesos de monitoreo y la carga de información a la base de datos.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
