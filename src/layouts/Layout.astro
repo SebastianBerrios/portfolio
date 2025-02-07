@@ -8,10 +8,9 @@ import { ViewTransitions } from "astro:transitions"
 interface Props {
   title: string
   description: string
-  imageUrl: string
 }
 
-const { description, title, imageUrl } = Astro.props
+const { description, title } = Astro.props
 ---
 
 <!doctype html>
@@ -22,7 +21,7 @@ const { description, title, imageUrl } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image" content="/portfolio.png" />
     <title>{title}</title>
     <ViewTransitions />
   </head>
