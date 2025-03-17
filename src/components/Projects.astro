@@ -1,14 +1,14 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import HTML from "./icons/HTML.astro"
-import Sass from "./icons/Sass.astro"
-import JavaScript from "./icons/JavaScript.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import TypeScript from "./icons/TypeScript.astro"
-import ReactJS from "./icons/ReactJS.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
+import GitHub from "@/assets/icons/GitHub.astro";
+import HTML from "@/assets/icons/HTML.astro";
+import Sass from "@/assets/icons/Sass.astro";
+import JavaScript from "@/assets/icons/JavaScript.astro";
+import NextJS from "@/assets/icons/NextJS.astro";
+import Tailwind from "@/assets/icons/Tailwind.astro";
+import TypeScript from "@/assets/icons/TypeScript.astro";
+import ReactJS from "@/assets/icons/ReactJS.astro";
+import Link from "@/assets/icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
   HTML: {
@@ -45,30 +45,35 @@ const TAGS = {
     name: "TypeScript",
     class: "bg-[#0A2A4D] text-white",
     icon: TypeScript,
-  }
-}
+  },
+};
+
 const PROJECTS = [
-{
-    title: "Atemporal",
-    description: "Sitio web de una empresa dedicada a la arquitectura y diseño de interiores.",
-    link: "https://www.atemporalarq.com/",
-    image: "/projects/atemporal.png",
+  {
+    title: "Shopping Cart",
+    description:
+      "Sitio web de una empresa dedicada a la arquitectura y diseño de interiores.",
+    link: "https://shopping-cart-sbg.vercel.app/",
+    github: "https://github.com/SebastianBerrios/shopping-cart",
+    image: "/src/assets/images/shopping-cart.webp",
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
   {
     title: "Pokédex",
-    description: "Aplicación para explorar Pokémones usando la PokeAPI, construida con React.js, React Router para la navegación y Axios para obtener los datos de la API.",
+    description:
+      "Aplicación para explorar Pokémones usando la PokeAPI, construida con React.js, React Router para la navegación y Axios para obtener los datos de la API.",
     link: "https://pokedex-sbg.vercel.app/",
     github: "https://github.com/SebastianBerrios/pokedex",
-    image: "/projects/pokedex.png",
+    image: "/src/assets/images/pokedex.webp",
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
   {
     title: "To Do List",
-    description: "Aplicación de lista de tareas que permite a los usuarios agregar, completar, eliminar y editar tareas. Desarrollado para profundizar en los conceptos claves de React.js",
+    description:
+      "Aplicación de lista de tareas que permite a los usuarios agregar, completar, eliminar y editar tareas. Desarrollado para profundizar en los conceptos claves de React.js",
     link: "https://todo-list-sbg.vercel.app/",
     github: "https://github.com/SebastianBerrios/todo_list",
-    image: "/projects/to-do-list.png",
+    image: "/src/assets/images/to-do-list.webp",
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
   {
@@ -77,62 +82,65 @@ const PROJECTS = [
       "Libro de recetas creado para optimizar la preparación de postres de un emprendimiento llamado Sugary. Desarrollado con HTML, CSS y JavaScript.",
     link: "https://recipebooksugary.vercel.app/",
     github: "https://github.com/SebastianBerrios/recipebook-sugary",
-    image: "/projects/recipe-book.png",
+    image: "/src/assets/images/recipe-book.webp",
     tags: [TAGS.HTML, TAGS.SASS, TAGS.JAVASCRIPT],
-  }
-]
+  },
+];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt={`portada del proyecto ${title}`} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt={`portada del proyecto ${title}`}
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-

@@ -1,16 +1,18 @@
 ---
-const personalImageAlt = "Sebastian Berrios"
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import SocialPill from "@/components/SocialPill.astro"
+const personalImageAlt = "Sebastian Berrios";
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/assets/icons/LinkedIn.astro";
+import MailIcon from "@/assets/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
 ---
 
-<div class="max-w-xl lg:flex lg:flex-row-reverse lg:max-w-4xl lg:justify-center lg:items-center lg:gap-8">
+<div
+  class="max-w-xl lg:flex lg:flex-row-reverse lg:max-w-4xl lg:justify-center lg:items-center lg:gap-8"
+>
   <div class="flex gap-4 mb-4 lg:flex-col">
     <img
       class="rounded-full shadow-lg size-40 lg:size-60"
-      src="/sebastian-new.jpg"
+      src="/sebastian-new.webp"
       alt={personalImageAlt}
     />
     <a
@@ -31,7 +33,12 @@ import SocialPill from "@/components/SocialPill.astro"
     <p
       class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
     >
-    Desarrollador frontend con más de 3 años de experiencia. He liderado el desarrollo de una webapp de monitoreo que optimizó la visualización de datos. Además, participé en una plataforma de cursos de programación y he diseñado sitios web para diversas empresas. Trabajo con tecnologías como <strong>React.js, Next.js, Astro, TypeScript, Tailwind CSS, y SQL</strong>.
+      Desarrollador frontend con más de 3 años de experiencia. He liderado el
+      desarrollo de una webapp de monitoreo que optimizó la visualización de
+      datos. Además, participé en una plataforma de cursos de programación y he
+      diseñado sitios web para diversas empresas. Trabajo con tecnologías como <strong
+        >React.js, Next.js, Astro, TypeScript, Tailwind CSS, y SQL</strong
+      >.
     </p>
     <nav class="flex flex-wrap gap-4 mt-8">
       <SocialPill href="mailto:sebberrios99@gmail.com">
