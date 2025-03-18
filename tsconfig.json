@@ -4,9 +4,7 @@
     "jsx": "react-jsx",
     "baseUrl": "D:/Proyectos/frontend/portfolio",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
     "jsxImportSource": "react"
   }
