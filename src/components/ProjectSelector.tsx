@@ -13,17 +13,17 @@ export default function ProjectSelector({
         {icon}
         <button onClick={() => setProjects(true)}>
           <h2 className={projects ? "font-bold" : "text-gray-600/80"}>
-            Proyectos
+            Freelances
           </h2>
         </button>
         <span>/</span>
         <button onClick={() => setProjects(false)}>
           <h2 className={projects ? "text-gray-600/80" : "font-bold"}>
-            Freelances
+            Proyectos
           </h2>
         </button>
       </div>
-      {projects ? projectsComponent : freelancesComponent}
+      {projects ? freelancesComponent : projectsComponent}
     </>
   );
 }

@@ -1,58 +1,14 @@
 ---
+import { TAGS } from "@/utils/tags";
 import GitHub from "@/assets/icons/GitHub.astro";
-import HTML from "@/assets/icons/HTML.astro";
-import Sass from "@/assets/icons/Sass.astro";
-import JavaScript from "@/assets/icons/JavaScript.astro";
-import NextJS from "@/assets/icons/NextJS.astro";
-import Tailwind from "@/assets/icons/Tailwind.astro";
-import TypeScript from "@/assets/icons/TypeScript.astro";
-import ReactJS from "@/assets/icons/ReactJS.astro";
 import Link from "@/assets/icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
-
-const TAGS = {
-  HTML: {
-    name: "HTML",
-    class: "bg-[#7A2718] text-white",
-    icon: HTML,
-  },
-  SASS: {
-    name: "Sass",
-    class: "bg-[#66334D] text-white",
-    icon: Sass,
-  },
-  JAVASCRIPT: {
-    name: "JavaScript",
-    class: "bg-[#7F740F] text-white",
-    icon: JavaScript,
-  },
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
-  },
-  REACT: {
-    name: "ReactJS",
-    class: "bg-[#0A2A3E] text-white",
-    icon: ReactJS,
-  },
-  TYPESCRIPT: {
-    name: "TypeScript",
-    class: "bg-[#0A2A4D] text-white",
-    icon: TypeScript,
-  },
-};
 
 const PROJECTS = [
   {
     title: "Shopping Cart",
     description:
-      "Tienda de productor tecnologicos, construida con React.js, ReactRouter para la navegación, ContextAPI para manejar los datos globales y LocalStorage para persistencia de datos en el navegador.",
+      "Tienda de productos tecnologicos, construida con React.js, React Router para la navegación, Context API para manejar los datos globales y LocalStorage para persistencia de datos en el navegador.",
     link: "https://shopping-cart-sbg.vercel.app/",
     github: "https://github.com/SebastianBerrios/shopping-cart",
     image: "/images/shopping-cart.webp",

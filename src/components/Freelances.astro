@@ -1,4 +1,5 @@
 ---
+import { TAGS } from "@/utils/tags";
 import LinkButton from "./LinkButton.astro";
 import Link from "@/assets/icons/Link.astro";
 
@@ -6,22 +7,25 @@ const FREELANCES = [
   {
     title: "Luang Asociados SAC",
     description:
-      "Empresa especialista en el desarrollo de Ingeniería Básica, Ingeniería de Detalle, Gestión de Proyectos y Construcción en el sector Minero",
+      "Sitio web para la empresa Luang Asociados SAC, incluye varias secciones y un formulario de contacto.",
     link: "https://luang.com.pe/",
     image: "/images/luang.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
   {
     title: "Atemporal",
-    description: "Empresa dedicada a la arquitectura y diseño de interiores.",
+    description:
+      "Landing page para la empresa Atemporal, diseño minimalista y moderno.",
     link: "https://www.atemporalarq.com/",
     image: "/images/atemporal.webp",
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    FREELANCES.map(({ image, title, description, link }) => (
+    FREELANCES.map(({ image, title, description, link, tags }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -39,6 +43,19 @@ const FREELANCES = [
             {title}
           </h3>
           <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
             <div class="mt-2 text-gray-700 dark:text-gray-400">
               {description}
             </div>
