@@ -15,10 +15,18 @@ const FREELANCES = [
   {
     title: "Atemporal",
     description:
-      "Landing page para la empresa Atemporal, diseño minimalista y moderno.",
-    link: "https://www.atemporalarq.com/",
+      "Biolink para la empresa Atemporal, diseño minimalista y moderno.",
+    link: "https://atemporalarq.vercel.app/",
     image: "/images/atemporal.webp",
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.TYPESCRIPT],
+  },
+  {
+    title: "Blu Café",
+    description:
+      "Biolink para la empresa Blu Café, diseño minimalista y moderno.",
+    link: "https://blucafe.vercel.app/",
+    image: "/images/blucafe.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
 ];
 ---
@@ -33,6 +41,7 @@ const FREELANCES = [
               alt={`portada del proyecto ${title}`}
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
               loading="lazy"
+              decoding="async"
               src={image}
             />
           </div>

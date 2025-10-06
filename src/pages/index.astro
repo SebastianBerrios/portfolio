@@ -30,13 +30,11 @@ import Code from "@/assets/icons/Code.astro";
       <Experience />
     </SectionContainer>
     <SectionContainer id="proyectos">
-      <SectionContainer id="proyectos">
-        <ProjectSelector client:visible>
-          <Code class="size-10" slot="icon" />
-          <Freelances slot="freelancesComponent" />
-          <Projects slot="projectsComponent" />
-        </ProjectSelector>
-      </SectionContainer>
+      <ProjectSelector client:visible>
+        <Code class="size-10" slot="icon" />
+        <Freelances slot="freelancesComponent" />
+        <Projects slot="projectsComponent" />
+      </ProjectSelector>
     </SectionContainer>
   </div>
 </Layout>
