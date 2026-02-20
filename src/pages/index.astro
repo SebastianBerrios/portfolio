@@ -19,19 +19,21 @@ import Code from "@/assets/icons/Code.astro";
       <Hero />
     </SectionContainer>
   </main>
-  <div class="space-y-24">
+
+  <div class="space-y-24 px-4">
     <SectionContainer id="experiencia">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        class="font-display flex items-center mb-2 text-3xl font-bold gap-x-3 text-gray-900 dark:text-white"
       >
-        <Briefcase class="size-8" />
+        <Briefcase class="size-7 text-amber-500 dark:text-amber-400" />
         Experiencia laboral
       </h2>
       <Experience />
     </SectionContainer>
+
     <SectionContainer id="proyectos">
       <ProjectSelector client:visible>
-        <Code class="size-10" slot="icon" />
+        <Code class="size-9" slot="icon" />
         <Freelances slot="freelancesComponent" />
         <Projects slot="projectsComponent" />
       </ProjectSelector>

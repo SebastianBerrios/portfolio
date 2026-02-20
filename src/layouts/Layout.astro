@@ -27,19 +27,27 @@ const { description, title } = Astro.props;
     <meta property="og:image" content="/portfolio.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap"
+      rel="stylesheet"
+    />
     <ViewTransitions />
   </head>
 
   <body class="relative text-black dark:text-white">
+    <!-- Background base + gradient -->
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="fixed inset-0 z-[-2] min-h-screen w-full bg-[#f9f7f2] dark:bg-[#0e0d12] bg-[radial-gradient(ellipse_80%_55%_at_50%_-10%,rgba(245,158,11,0.11)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse_80%_55%_at_50%_-10%,rgba(245,158,11,0.16)_0%,transparent_65%)]"
+      aria-hidden="true"
     >
     </div>
+
     <Header />
     <slot />
     <Footer />
+
     <style is:global>
       :root {
         color-scheme: light dark;
@@ -58,6 +66,27 @@ const { description, title } = Astro.props;
         overscroll-behavior: none;
       }
 
+      /* Grain texture overlay */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.038;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-size: 256px 256px;
+      }
+
+      .dark body::before {
+        opacity: 0.07;
+      }
+
+      /* Display font utility */
+      .font-display {
+        font-family: "Fraunces", Georgia, serif;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
@@ -66,7 +95,7 @@ const { description, title } = Astro.props;
 
       @media (prefers-color-scheme: dark) {
         body {
-          color: rgba(255, 255, 255, 0.9);
+          color: rgba(240, 237, 232, 0.95);
         }
       }
 
@@ -78,15 +107,18 @@ const { description, title } = Astro.props;
 
       @keyframes blur {
         to {
-          backdrop-filter: blur(20px);
+          backdrop-filter: blur(24px);
           border-width: 1px;
-          border-color: rgba(0, 0, 0);
+          border-color: rgba(0, 0, 0, 0.07);
           padding: 0.25rem 0.75rem;
           display: flex;
           flex-direction: row;
           align-items: center;
-          background-color: rgb(229, 229, 229);
+          background-color: rgba(249, 247, 242, 0.88);
           border-radius: 9999px;
+          box-shadow:
+            0 2px 20px rgba(0, 0, 0, 0.06),
+            0 0 0 1px rgba(0, 0, 0, 0.04);
         }
       }
 
@@ -97,12 +129,12 @@ const { description, title } = Astro.props;
           }
           to {
             box-shadow:
-              0px 5px 50px -5px rgba(0, 0, 0, 0.1),
-              0px 0px 0 1px rgba(0, 0, 0, 0.3);
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(20px);
+              0px 5px 50px -5px rgba(0, 0, 0, 0.4),
+              0px 0px 0 1px rgba(255, 255, 255, 0.05);
+            background: rgba(14, 13, 18, 0.82);
+            backdrop-filter: blur(24px);
             border-width: 1px;
-            border-color: rgba(0, 0, 0);
+            border-color: rgba(255, 255, 255, 0.05);
             padding-left: 0.75rem;
             padding-right: 0.75rem;
             padding-top: 0.25rem;
@@ -110,7 +142,6 @@ const { description, title } = Astro.props;
             display: flex;
             flex-direction: row;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.3);
             border-radius: 9999px;
           }
         }

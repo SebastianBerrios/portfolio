@@ -7,43 +7,68 @@ import SocialPill from "@/components/SocialPill.astro";
 ---
 
 <div
-  class="max-w-xl lg:flex lg:flex-row-reverse lg:max-w-4xl lg:justify-center lg:items-center lg:gap-8"
+  class="max-w-xl lg:flex lg:flex-row-reverse lg:max-w-4xl lg:justify-between lg:items-center lg:gap-12"
 >
-  <div class="flex gap-4 mb-4 lg:flex-col">
-    <img
-      class="rounded-full shadow-lg size-40 lg:size-60"
-      src="/sebastian-new.webp"
-      alt={personalImageAlt}
-      fetchpriority="high"
-      decoding="async"
-    />
-    <a
-      href="https://www.linkedin.com/in/sebastian-berrios-gomez/"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
-    >
-      <Badge>Disponible para trabajar</Badge>
-    </a>
+  <!-- Profile image with ambient glow -->
+  <div class="flex justify-center mb-10 lg:mb-0 lg:flex-shrink-0">
+    <div class="relative">
+      <div
+        class="absolute inset-0 rounded-full bg-amber-400/25 dark:bg-amber-500/15 blur-3xl scale-125 pointer-events-none"
+        aria-hidden="true"
+      >
+      </div>
+      <img
+        class="relative rounded-full shadow-2xl size-36 sm:size-44 lg:size-56 ring-4 ring-amber-400/20 dark:ring-amber-500/15"
+        src="/sebastian-new.webp"
+        alt={personalImageAlt}
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
   </div>
-  <div class="max-w-xl">
+
+  <!-- Text content -->
+  <div class="flex-1">
+    <!-- Available badge -->
+    <div class="mb-5">
+      <a
+        href="https://www.linkedin.com/in/sebastian-berrios-gomez/"
+        target="_blank"
+        rel="noopener"
+        class="inline-block transition hover:scale-105"
+      >
+        <Badge>Disponible para trabajar</Badge>
+      </a>
+    </div>
+
+    <!-- Name with display (serif) font -->
     <h1
-      class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+      class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight"
     >
-      Sebastián Berrios Gómez
+      Sebastián<br />Berrios Gómez
     </h1>
+
+    <!-- Role label -->
     <p
-      class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+      class="mt-3 text-xs font-bold tracking-widest uppercase text-amber-600 dark:text-amber-400"
     >
-      Desarrollador frontend con más de dos años de experiencia. He participado
-      en el desarrollo de una plataforma de cursos de programación que cuenta
-      con más de 500 usuarios. Tambien optimicé un sitio web de monitoreo
-      haciendolo 100% responsive. Además, desarrollé sitios web para diferentes
-      empresas. Trabajo con tecnologías como <strong
-        >React.js, Next.js, Astro, TypeScript, Tailwind CSS, y SQL</strong
+      Desarrollador Frontend
+    </p>
+
+    <!-- Bio -->
+    <p
+      class="mt-6 text-base leading-relaxed text-gray-600 dark:[&>strong]:text-amber-300 [&>strong]:text-amber-700 [&>strong]:font-semibold dark:text-gray-400"
+    >
+      Más de dos años de experiencia construyendo interfaces web. Participé en el
+      desarrollo de una plataforma con <strong>más de 500 usuarios</strong>,
+      optimicé sitios web para que sean completamente responsive y desarrollé
+      sitios para diferentes empresas. Trabajo con <strong
+        >React.js, Next.js, Astro, TypeScript y Tailwind CSS</strong
       >.
     </p>
-    <nav class="flex flex-wrap gap-4 mt-8">
+
+    <!-- CTA buttons -->
+    <nav class="flex flex-wrap gap-3 mt-7">
       <SocialPill href="mailto:sebberrios99@gmail.com">
         <MailIcon class="size-4" />
         Contáctame
